@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "demoadf-pm"
+		},
+		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
+			"value": "adf"
+		},
+		"AzureBlobStorage2_properties_typeProperties_serviceEndpoint": {
+			"value": "https://demopm.blob.core.windows.net"
+		},
+		"AzureBlobStorage2_properties_typeProperties_tenant": {
+			"value": "85173d93-99ef-4dff-9b45-495719659133"
+		},
+		"AzureBlobStorage2_properties_typeProperties_servicePrincipalId": {
+			"value": "d64734c0-fb18-4e4d-89b2-584dd8221ea5"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://dempkeyvault-pm.vault.azure.net/"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/69f5edd7-f0f0-4bf5-b0c7-c9be29f4d4d4/resourceGroups/pmalik/providers/Microsoft.Storage/storageAccounts/demopm"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
