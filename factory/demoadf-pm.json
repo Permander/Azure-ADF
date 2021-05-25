@@ -1,0 +1,9 @@
+{
+	"name": "demoadf-pm",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "092a232b-0faf-46f9-bd40-3fec97e70ce7",
+		"tenantId": "85173d93-99ef-4dff-9b45-495719659133"
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"name": "AzureBlobStorage2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"azureCloudType": "AzurePublic",
+			"serviceEndpoint": "https://demopm.blob.core.windows.net",
+			"tenant": "85173d93-99ef-4dff-9b45-495719659133",
+			"servicePrincipalId": "d64734c0-fb18-4e4d-89b2-584dd8221ea5",
+			"servicePrincipalKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "azprinciple"
+			},
+			"accountKind": "StorageV2"
+		}
+	}
+}
