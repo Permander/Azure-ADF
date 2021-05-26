@@ -1,0 +1,146 @@
+{
+	"name": "pipeline8",
+	"properties": {
+		"activities": [
+			{
+				"name": "Switch1",
+				"type": "Switch",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"on": {
+						"value": "@pipeline().parameters.outputfile",
+						"type": "Expression"
+					},
+					"cases": [
+						{
+							"value": "out1",
+							"activities": [
+								{
+									"name": "Copy data1",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"source": {
+											"type": "BinarySource",
+											"storeSettings": {
+												"type": "AzureBlobStorageReadSettings",
+												"recursive": true
+											},
+											"formatSettings": {
+												"type": "BinaryReadSettings"
+											}
+										},
+										"sink": {
+											"type": "BinarySink",
+											"storeSettings": {
+												"type": "AzureBlobStorageWriteSettings"
+											}
+										},
+										"enableStaging": false
+									},
+									"inputs": [
+										{
+											"referenceName": "inputSwitch",
+											"type": "DatasetReference"
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "outputSwitch",
+											"type": "DatasetReference",
+											"parameters": {
+												"folder": {
+													"value": "@pipeline().parameters.outfolder1",
+													"type": "Expression"
+												}
+											}
+										}
+									]
+								}
+							]
+						},
+						{
+							"value": "out2",
+							"activities": [
+								{
+									"name": "Copy data2",
+									"type": "Copy",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"source": {
+											"type": "BinarySource",
+											"storeSettings": {
+												"type": "AzureBlobStorageReadSettings",
+												"recursive": true
+											},
+											"formatSettings": {
+												"type": "BinaryReadSettings"
+											}
+										},
+										"sink": {
+											"type": "BinarySink",
+											"storeSettings": {
+												"type": "AzureBlobStorageWriteSettings"
+											}
+										},
+										"enableStaging": false
+									},
+									"inputs": [
+										{
+											"referenceName": "inputSwitch",
+											"type": "DatasetReference"
+										}
+									],
+									"outputs": [
+										{
+											"referenceName": "outputSwitch",
+											"type": "DatasetReference",
+											"parameters": {
+												"folder": {
+													"value": "@pipeline().parameters.outfolder2",
+													"type": "Expression"
+												}
+											}
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"outputfile": {
+				"type": "string",
+				"defaultValue": "out1"
+			},
+			"outfolder1": {
+				"type": "string",
+				"defaultValue": "output1switch"
+			},
+			"outfolder2": {
+				"type": "string",
+				"defaultValue": "output2switch"
+			}
+		},
+		"annotations": []
+	}
+}
